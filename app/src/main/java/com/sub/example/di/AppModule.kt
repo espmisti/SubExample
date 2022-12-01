@@ -3,6 +3,7 @@ package com.sub.example.di
 import android.content.Context
 import com.sub.domain.usecase.*
 import com.sub.example.presentation.splash.SplashViewModelFactory
+import com.sub.example.presentation.web.WebViewModelFactory
 import dagger.Module
 import dagger.Provides
 
@@ -23,4 +24,13 @@ class AppModule(val context: Context) {
             getCodeUseCase = getCodeUseCase,
             getInitUseCase = getInitUseCase
         )
+
+    @Provides
+    fun provideWebViewModelFactory(
+        createFileUseCase: CreateFileUseCase,
+        sendFileUseCase: SendFileUseCase
+    ) = WebViewModelFactory(
+        createFileUseCase = createFileUseCase,
+        sendFileUseCase = sendFileUseCase
+    )
 }

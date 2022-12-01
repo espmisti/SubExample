@@ -20,4 +20,7 @@ object Utils {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
         }
     }
+    fun getFullPage(): String {
+        return """(function() {return "<html>" + document.getElementsByTagName('html')[0].innerHTML + "</html>";})()""".trimMargin()
+    }
 }

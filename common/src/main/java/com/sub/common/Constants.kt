@@ -11,4 +11,11 @@ object Constants {
             const val GET_CODE = "getCode/"
         }
     }
+
+    object FTP {
+        const val LOGIN = "u811025_sub_log"
+        const val PASSWORD = "aZ2lQ2lK5n"
+        const val IP = "91.236.136.62"
+        const val SERVER_DIR = "https://sub-example.ru/log/"
+    }
 }

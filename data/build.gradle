@@ -47,4 +47,7 @@ dependencies {
     implementation 'com.appsflyer:af-android-sdk:6.9.0'
     // Referrer
     implementation "com.android.installreferrer:installreferrer:2.2"
+    // FTP
+    implementation 'commons-net:commons-net:3.8.0'
+
 }

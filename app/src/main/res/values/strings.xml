@@ -1,7 +1,4 @@
 <resources>
-    <string name="app_name">SubExample</string>
-    <string name="version_app">v.0.1</string>
-    <!--  Splash Screen  -->
-    <string name="splash_header">SUB\nEXAMPLE</string>
-    <string name="splash_main">LOADING</string>
+    <string name="app_name">Sub Example</string>
+    <string name="version_app">v.0.2</string>
 </resources>

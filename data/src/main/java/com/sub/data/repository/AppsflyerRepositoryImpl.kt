@@ -16,7 +16,10 @@ class AppsflyerRepositoryImpl(private val context: Context) : AppsflyerRepositor
     override suspend fun getData(): AppsflyerModel? = suspendCoroutine {
         val conversionListener = object : AppsFlyerConversionListener {
             override fun onConversionDataSuccess(map: MutableMap<String, Any>?) {
-                it.resume(AppsflyerModel.Builder(campaign = map?.get("campaign").toString()).build())
+                //it.resume(AppsflyerModel.Builder(campaign = map?.get("campaign").toString()).build())
+                it.resume(AppsflyerModel.Builder()
+                    .setCampaign(v = "test_12_vanya")
+                    .build())
             }
 
             override fun onConversionDataFail(p0: String?) {

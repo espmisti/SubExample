@@ -1,1 +1,0 @@
-const express=require("express"),path=require("path"),app=express(),port=3034;app.use("/",express.static(__dirname)),app.get("/",((e,p)=>{p.sendFile(path.join(__dirname+"/index.html"))})),app.listen(3034,(()=>{console.log("listen","http://localhost:3034")}));

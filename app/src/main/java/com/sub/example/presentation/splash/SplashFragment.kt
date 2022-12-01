@@ -21,6 +21,7 @@ class SplashFragment : Fragment() {
     private lateinit var viewModel: SplashViewModel
 
     private val TAG = "SPLASH_APP_CHECK"
+    private val bundle = Bundle()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,15 +54,17 @@ class SplashFragment : Fragment() {
 
     private fun flowKeySuccessLiveData() = Observer<String> { model->
         Log.i(TAG, "[Success]: Flowkey founded: $model")
+        bundle.putString("flowkey", model)
         viewModel.codeSuccessLiveData.observe(viewLifecycleOwner, codeSuccessLiveData())
         viewModel.codeFailureLiveData.observe(viewLifecycleOwner, codeFailureLiveData())
         viewModel.getCode(model)
     }
 
     private fun codeSuccessLiveData() = Observer<CodeModel> { model->
-        val bundle = Bundle()
+
         bundle.putString("code", model.code)
         bundle.putString("url", model.url)
+        model.log_active?.let { bundle.putInt("log_active", it) }
         findNavController().navigate(R.id.webFragment, bundle)
     }
 

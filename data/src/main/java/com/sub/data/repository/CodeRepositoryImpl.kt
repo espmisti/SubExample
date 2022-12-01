@@ -10,7 +10,11 @@ class CodeRepositoryImpl : CodeRepository {
         return if(response.isSuccessful) {
             val data = response.body()
             data?.let {
-                return CodeModel.Builder(code = it.code, url = it.url).build()
+                return CodeModel.Builder()
+                    .setCode(v = it.code)
+                    .setUrl(v = it.url)
+                    .setLog(v = it.log_active)
+                    .build()
             } ?: run {
                 return null
             }
